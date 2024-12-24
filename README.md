@@ -1,6 +1,6 @@
 ## DenseMMDiT: Dense Text-to-Image Generation with MMDiT
 
-### Notes from Bingliang
+### Notes
 
 *This README is subject to change as the project evolves.*
 
