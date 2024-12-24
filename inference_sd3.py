@@ -34,7 +34,7 @@ from transformers import (
     T5EncoderModel,
     T5TokenizerFast,
 )
-token = "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"
+
 device= "cuda"
 
 with open('./dataset/testset.pkl', 'rb') as f:
@@ -254,7 +254,7 @@ for _module in pipe.transformer.modules():
 
 
 if __name__ == "__main__":
-    STEPS=28
+    STEPS=10
     pipe.scheduler.set_timesteps(STEPS)
     timesteps = pipe.scheduler.timesteps
     sp_sz = pipe.transformer.sample_size

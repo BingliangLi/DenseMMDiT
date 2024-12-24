@@ -1,4 +1,30 @@
-## Dense Text-to-Image Generation with Attention Modulation
+## Dense Diffusion 3.5: Dense Text-to-Image Generation with MMDiT
+
+### Notes from Bingliang
+
+*This README is subject to change as the project evolves.*
+
+#### Installation
+To install the required packages, run the following command:
+```bash
+pip install -e diffusers detectron2  # Install these packages from local files
+```
+
+#### Inference
+- To run the demo, use **inference_sd3.ipynb** (Note: the Gradio demo is not available at the moment).
+- To generate results for the entire dataset, use **inference_sd3.py**.
+
+#### Evaluation
+- For **CLIP Score**, refer to **clip_score.ipynb**.
+- For **IoU**, use **yolov7-mask/eval_iou.ipynb**.
+
+#### Main Modifications
+Key changes were made in the following files:
+- **diffusers/src/diffusers/pipelines/stable_diffusion_3/pipeline_dense_stable_diffusion_3.py**
+- **inference_sd3.ipynb** (specifically the `JointAttnProcessor_mod` class)
+
+🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄
+
 ### ICCV 2023 [[Paper](https://arxiv.org/abs/2308.12964)] [[Demo on HF 🤗](https://huggingface.co/spaces/naver-ai/DenseDiffusion)] [[Colab Demo](https://github.com/XandrChris/DenseDiffusionColab)] <br> <br>
 > #### Authors &emsp;&emsp; [Yunji Kim](https://github.com/YunjiKim)<sup>1</sup>, [Jiyoung Lee](https://lee-jiyoung.github.io)<sup>1</sup>, [Jin-Hwa Kim](http://wityworks.com/)<sup>1</sup>, [Jung-Woo Ha](https://github.com/jungwoo-ha)<sup>1</sup>, [Jun-Yan Zhu](https://www.cs.cmu.edu/~junyanz/)<sup>2</sup> <br> <sub> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <sup>1</sup>NAVER AI Lab, <sup>2</sup>Carnegie Mellon University </sub>
 
