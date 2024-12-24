@@ -1,4 +1,4 @@
-## Dense Diffusion 3.5: Dense Text-to-Image Generation with MMDiT
+## DenseMMDiT: Dense Text-to-Image Generation with MMDiT
 
 ### Notes from Bingliang
 
