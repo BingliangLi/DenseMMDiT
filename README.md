@@ -15,7 +15,7 @@ pip install -e diffusers detectron2  # Install these packages from local files
 - To generate results for the entire dataset, use **inference_sd3.py**.
 
 #### Evaluation
-- For **CLIP Score**, refer to **clip_score.ipynb**.
+- For **CLIP Score**, refer to **clip_score.ipynb**. (Note that this is the Clip-score for the whole image, not Local Clip-score yet)
 - For **IoU**, use **yolov7-mask/eval_iou.ipynb**.
 
 #### Main Modifications
