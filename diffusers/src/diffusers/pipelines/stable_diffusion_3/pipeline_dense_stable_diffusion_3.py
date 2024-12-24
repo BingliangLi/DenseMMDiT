@@ -446,7 +446,7 @@ class DenseStableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromS
                         if (text_inputs['input_ids'][0][j:j+wlen] == widx).sum() == wlen:
                             pww_maps[:,j:j+wlen,:,:] = layouts[i-1:i]
                             prompt_embed[0][j:j+wlen] = prompt_embed[i][1:1+wlen]
-                            print(prompt[i], i, '-th segment is handled.')
+                            # print(prompt[i], i, '-th segment is handled.')
                             break
                 creg_maps = {}
                 for r in range(4):
@@ -471,10 +471,13 @@ class DenseStableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromS
                         if (text_inputs_2['input_ids'][0][j:j+wlen] == widx).sum() == wlen:
                             pww_maps_2[:,j:j+wlen,:,:] = layouts[i-1:i]
                             prompt_2_embed[0][j:j+wlen] = prompt_2_embed[i][1:1+wlen]
-                            print(prompt_2[i], i, '-th segment is handled.')
+                            # print(prompt_2[i], i, '-th segment is handled.')
                             break
-
-                del pww_maps, pww_maps_2
+            # prompt_embed = prompt_embed[0].unsqueeze(0)
+            # prompt_2_embed = prompt_2_embed[0].unsqueeze(0)
+            # pooled_prompt_embed = pooled_prompt_embed[0].unsqueeze(0)
+            # pooled_prompt_2_embed = pooled_prompt_2_embed[0].unsqueeze(0)
+            del pww_maps, pww_maps_2
                         
             clip_prompt_embeds = torch.cat([prompt_embed, prompt_2_embed], dim=-1)
 
@@ -484,6 +487,8 @@ class DenseStableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromS
                 max_sequence_length=max_sequence_length,
                 device=device,
             )
+
+            # t5_prompt_embed = t5_prompt_embed[0].unsqueeze(0)
 
             clip_prompt_embeds = torch.nn.functional.pad(
                 clip_prompt_embeds, (0, t5_prompt_embed.shape[-1] - clip_prompt_embeds.shape[-1])
