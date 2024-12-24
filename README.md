@@ -23,7 +23,7 @@ Key changes were made in the following files:
 - **diffusers/src/diffusers/pipelines/stable_diffusion_3/pipeline_dense_stable_diffusion_3.py**
 - **inference_sd3.ipynb** (specifically the `JointAttnProcessor_mod` class)
 
-🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄
+🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄
 
 ### ICCV 2023 [[Paper](https://arxiv.org/abs/2308.12964)] [[Demo on HF 🤗](https://huggingface.co/spaces/naver-ai/DenseDiffusion)] [[Colab Demo](https://github.com/XandrChris/DenseDiffusionColab)] <br> <br>
 > #### Authors &emsp;&emsp; [Yunji Kim](https://github.com/YunjiKim)<sup>1</sup>, [Jiyoung Lee](https://lee-jiyoung.github.io)<sup>1</sup>, [Jin-Hwa Kim](http://wityworks.com/)<sup>1</sup>, [Jung-Woo Ha](https://github.com/jungwoo-ha)<sup>1</sup>, [Jun-Yan Zhu](https://www.cs.cmu.edu/~junyanz/)<sup>2</sup> <br> <sub> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <sup>1</sup>NAVER AI Lab, <sup>2</sup>Carnegie Mellon University </sub>
