@@ -480,7 +480,9 @@ class DenseStableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromS
             del pww_maps, pww_maps_2
                         
             clip_prompt_embeds = torch.cat([prompt_embed, prompt_2_embed], dim=-1)
-
+            print("prompt_embed shape", prompt_embed.shape)
+            print("prompt_2_embed shape", prompt_2_embed.shape)
+            print("clip_prompt_embeds shape", clip_prompt_embeds.shape)
             t5_prompt_embed = self._get_t5_prompt_embeds(
                 prompt=prompt_3,
                 num_images_per_prompt=num_images_per_prompt,
@@ -489,13 +491,15 @@ class DenseStableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromS
             )
 
             # t5_prompt_embed = t5_prompt_embed[0].unsqueeze(0)
-
+            print("t5_prompt_embed shape", t5_prompt_embed.shape)
             clip_prompt_embeds = torch.nn.functional.pad(
                 clip_prompt_embeds, (0, t5_prompt_embed.shape[-1] - clip_prompt_embeds.shape[-1])
             )
-
+            print("clip_prompt_embeds shape after padding", clip_prompt_embeds.shape)
             prompt_embeds = torch.cat([clip_prompt_embeds, t5_prompt_embed], dim=-2)
+            print("prompt_embeds shape after concat", prompt_embeds.shape)
             pooled_prompt_embeds = torch.cat([pooled_prompt_embed, pooled_prompt_2_embed], dim=-1)
+            print("pooled_prompt_embeds shape", pooled_prompt_embeds.shape)
 
         if do_classifier_free_guidance and negative_prompt_embeds is None:
             negative_prompt = negative_prompt or ""
